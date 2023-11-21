@@ -19,6 +19,12 @@ Actions can be applied to automate various data processing tasks. Our objective 
   * Settings ->   Actions -> Allow actions and reusable workflows
   * [Managing Permissions Documentation](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#managing-github-actions-permissions-for-your-repository) 
 
+# GitHub Actions Python Environment Workflow
+First, we will run a basic workflow which creates a python environment with a few scientific packages and prints out their version
+* [.github/workflows/python_env.yml](https://github.com/ofmla/githubactions_intro/blob/main/.github/workflows/python_env.yml)
+* go to **Actions** tab, click on **Python Environment**, and click **Run workflow**: this will manually trigger the workflow ([`dispatch_workflow`](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow))
+* click on the newly created run to see the execution progress
+
 ## License
 
 These materials are for a course intended to provide a (very) quick introduction to GitHub Actions. The course is aimed at a scientific audience. Comments, corrections, and additions are welcome.
