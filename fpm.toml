@@ -1,0 +1,17 @@
+name = "gs-fortran"
+author = "Oscar Mojica"
+copyright  = "Copyright (c) 2023, Oscar Mojica"
+license = "MIT"
+description = "Gaver stehfest algorithm in fortran"
+homepage = "https://github.com/ofmla/inv_laplace_transform"
+keywords = ["inverse Laplace transform", "Gaver Stehfest algorithm",]
+
+[build]
+auto-executables = false
+auto-examples = false
+auto-tests = false
+
+[[executable]]
+name = "gs-prog"
+source-dir = "src"
+main = "gs_algo.f90" 

@@ -1,0 +1,6 @@
+# Ignore build folder
+/build
+
+# Ignore Fortran compiler generated files
+fort*
+
