@@ -1,0 +1,68 @@
+name: Continuous Integration
+
+on:
+  # To run manually
+  [workflow_dispatch]
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest] # [ubuntu-latest, macos-latest, windows-latest]
+        toolchain: [{compiler: gcc, version: 11}]
+        include:
+          - os: ubuntu-latest
+            toolchain: {compiler: intel, version: '2023.1'}
+          - os: ubuntu-latest
+            toolchain: {compiler: intel-classic, version: '2021.9'}
+          #- os: macos-latest
+          #  toolchain: {compiler: intel-classic, version: '2021.9'}
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the
+      # added or changed files to the repository.
+      contents: write
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
+
+    - name: Get compiler
+      uses: fortran-lang/setup-fortran@v1
+      with:
+        compiler: ${{ matrix.toolchain.compiler }}
+        version: ${{ matrix.toolchain.version }}
+        
+    - name: Setup Fortran Package Manager
+      uses: fortran-lang/setup-fpm@v5
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Run NILP app test
+      run: |
+        ${{ env.FC }} --version
+        fpm run --target gs-prog --profile release --V
+
+    - name: get png file
+      if: ${{ (matrix.os == 'ubuntu-latest') && (matrix.toolchain.compiler == 'gcc') }}
+      run: |
+        sudo apt-get -y install gnuplot
+        gnuplot nilp.p
+
+    - name: commit
+      if: ${{ (matrix.os == 'ubuntu-latest') && (matrix.toolchain.compiler == 'gcc') }}
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+          commit_message: Commit to Github
+          file_pattern: '*.png'
+
+    - name: upload png file
+      if: ${{ (matrix.os == 'ubuntu-latest') && (matrix.toolchain.compiler == 'gcc') }}
+      uses: actions/upload-artifact@v2
+      with:
+        name: Graphic
+        path: |
+          png/*.png
