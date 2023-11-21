@@ -1,3 +1,5 @@
+![python workflow](https://github.com/ofmla/githubactions_intro/actions/workflows/python_env.yml/badge.svg)
+
 # A (very) quick introduction to GitHub Actions
 
 **Author:** Oscar Mojica, Supercomputing Center for Industrial Innovation, Senai Cimatec
