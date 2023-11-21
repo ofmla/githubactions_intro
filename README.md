@@ -13,6 +13,7 @@ Actions can be applied to automate various data processing tasks. Our objective 
 **Audience:** scientific programmers interested in automating components of their workflows through existing tools for software continuous integration/deployment.
 
 ## GitHub Actions Introduction
+* [Intro slides](https://github.com/ofmla/githubactions_intro/blob/main/github_actions.pdf)
 * [Github actions documentation](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions)
 
 ## Setup 
