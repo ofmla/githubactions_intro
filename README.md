@@ -69,9 +69,9 @@ Next, we will demonstrate how GitHub Actions can be used to display an image in 
         The last three steps (get png file, commit, upload png file) are conditional on Ubuntu and GCC in the matrix. They execute only if the operating system is Ubuntu and the compiler is GCC.
 
 After the workflow is executed a `nilp.png` file is updated in the repo and is visualized below
-```
+
 ![alt text](https://raw.githubusercontent.com/ofmla/githubactions_intro/main/png/nilp.png)
-```
+
 
 ## License
 
