@@ -17,8 +17,8 @@ program gaver_stehfest
 
     call gs_weights(wgt)
     tarray(1) = 1.d-6
-    tarray(100) = 5._wp
-    step = (5._wp-1.e-6_wp)/real(tpts-1,kind=wp)
+    tarray(100) = 6._wp
+    step = (6._wp-1.e-6_wp)/real(tpts-1,kind=wp)
     do i= 2, tpts-1
      tarray(i) = tarray(i-1) + step
     enddo
