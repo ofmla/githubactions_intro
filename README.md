@@ -1,4 +1,5 @@
 ![python workflow](https://github.com/ofmla/githubactions_intro/actions/workflows/python_env.yml/badge.svg)
+![fortran workflow](https://github.com/ofmla/githubactions_intro/actions/workflows/main.yml/badge.svg)
 
 # A (very) quick introduction to GitHub Actions
 
