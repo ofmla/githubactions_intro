@@ -61,7 +61,7 @@ jobs:
 
     - name: upload png file
       if: ${{ (matrix.os == 'ubuntu-latest') && (matrix.toolchain.compiler == 'gcc') }}
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: Graphic
         path: |
