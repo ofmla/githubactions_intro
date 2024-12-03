@@ -44,7 +44,8 @@ jobs:
     - name: Run NILP app test
       run: |
         ${{ env.FC }} --version
-        fpm run --target gs-prog --profile release --V
+        ls /usr/local/opt/gcc/lib/gcc/
+        fpm run --target gs-prog --profile release --compiler ${{ env.FC }} --V
 
     - name: get png file
       if: ${{ (matrix.os == 'ubuntu-latest') && (matrix.toolchain.compiler == 'gcc') }}
