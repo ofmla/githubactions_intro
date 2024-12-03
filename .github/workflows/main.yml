@@ -44,7 +44,6 @@ jobs:
     - name: Run NILP app test
       run: |
         ${{ env.FC }} --version
-        ls /usr/local/opt/gcc/lib/gcc/
         fpm run --target gs-prog --profile release --compiler ${{ env.FC }} --V
 
     - name: get png file
