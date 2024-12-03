@@ -39,9 +39,10 @@ jobs:
     - name: Setup Fortran on MacOS
       if: contains( matrix.os, 'macos')
       run: |
-        brew reinstall gcc@11
-        ln -s /usr/local/lib/gcc/current/libgfortran.5.dylib /usr/local/lib/
-        ln -s /usr/local/lib/gcc/current/libquadmath.0.dylib /usr/local/lib/
+        brew reinstall gcc@${{ matrix.toolchain.version }}
+        ln -s /usr/local/opt/gcc/lib/gcc/current/libgfortran.5.dylib /usr/local/lib/
+        ln -s /usr/local/opt/gcc/lib/gcc/current/libquadmath.0.dylib /usr/local/lib/
+        ln -s /opt/homebrew/Cellar/gcc@11/11.5.0/bin/gfortran /usr/local/bin/gfortran
     
     - name: Setup Fortran Package Manager
       uses: fortran-lang/setup-fpm@v5
