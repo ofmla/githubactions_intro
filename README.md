@@ -76,6 +76,13 @@ After the workflow is executed a `nilp.png` file is updated in the repo and is v
 
 ![alt text](https://raw.githubusercontent.com/ofmla/githubactions_intro/main/png/nilp.png)
 
+> ⚠️ **CI Workflow Failure Notice**
+>
+> Please note that the current Continuous Integration (CI) workflow has encountered issues with two of its six jobs. Specifically, the jobs that run on the `macos-latest` operating system and use **gfortran** and **intel-classic** compilers are failing. This issue has been documented in the [open issue #32](https://github.com/fortran-lang/setup-fortran/issues/32).
+> 
+> The resolution of this issue is being investigated by the relevant team. In the meantime, please be aware that the remaining jobs in the CI workflow are running successfully. As a result of this, the CI badge at the top of the README will appear red.
+>
+> Thank you for your understanding while the issue is being addressed.
 
 ## License
 
